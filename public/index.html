@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fullstack Shopping App</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="app" class="app-shell">
+    <header class="topbar">
+      <h1>ShopEasy</h1>
+      <div class="cart-link">
+        Cart (<span id="cart-count">0</span>)
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <h2>Simple ecommerce demo</h2>
+        <p>Browse products, add to cart, and submit a mock order.</p>
+      </section>
+
+      <section id="products" class="product-grid"></section>
+
+      <section class="checkout-panel hidden" id="checkout-panel">
+        <h2>Shopping cart</h2>
+        <div id="cart-items"></div>
+        <div class="summary">
+          <div>Subtotal: $<span id="cart-total">0.00</span></div>
+          <button id="checkout-button" class="btn">Place Order</button>
+        </div>
+        <div id="order-result" class="order-result"></div>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
