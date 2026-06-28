@@ -1,0 +1,15 @@
+{
+  "name": "shopping-backend",
+  "version": "1.0.0",
+  "description": "Backend API for the fullstack shopping app.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.4",
+    "mongoose": "^7.4.2"
+  },
+  "license": "MIT"
+}

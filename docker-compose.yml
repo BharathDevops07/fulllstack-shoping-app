@@ -1,7 +1,18 @@
 version: '3.9'
 services:
-  app:
-    build: .
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    environment:
+      - API_BASE_URL=http://backend:5000
+
+  backend:
+    build:
+      context: ./backend
     ports:
       - "5000:5000"
     environment:
@@ -9,6 +20,7 @@ services:
       - NODE_ENV=production
     depends_on:
       - mongo
+
   mongo:
     image: mongo:7.0
     restart: unless-stopped

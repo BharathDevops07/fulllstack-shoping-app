@@ -1,0 +1,13 @@
+{
+  "name": "shopping-frontend",
+  "version": "1.0.0",
+  "description": "Static frontend for the fullstack shopping app.",
+  "private": true,
+  "scripts": {
+    "start": "serve -s . -l 3000"
+  },
+  "dependencies": {
+    "serve": "^14.2.0"
+  },
+  "license": "MIT"
+}
