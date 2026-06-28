@@ -85,7 +85,7 @@ function renderProducts(products) {
 
 async function loadProducts() {
   try {
-    const response = await fetch('/api/products');
+    const response = await fetch('http://localhost:5000/api/products');
     const products = await response.json();
     renderProducts(products);
   } catch (error) {
@@ -102,7 +102,7 @@ checkoutButton.addEventListener('click', async () => {
   };
 
   try {
-    const response = await fetch('/api/orders', {
+    const response = await fetch('http://localhost:5000/api/orders', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(order),

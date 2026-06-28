@@ -10,7 +10,7 @@ const mongoUri = process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/shop';
 
 app.use(cors());
 app.use(express.json());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use('/static', express.static(path.join(__dirname, 'public')));
 
 app.get('/api/products', async (req, res) => {
   const products = await Product.find().sort({ name: 1 });
@@ -39,10 +39,6 @@ app.post('/api/orders', (req, res) => {
       createdAt: new Date().toISOString(),
     },
   });
-});
-
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 async function seedProducts() {
@@ -91,7 +87,7 @@ async function start() {
     console.log('Connected to MongoDB');
     await seedProducts();
     app.listen(port, () => {
-      console.log(`Server is running on http://localhost:${port}`);
+      console.log(`Backend API running on http://localhost:${port}`);
     });
   } catch (error) {
     console.error('Startup error:', error);
